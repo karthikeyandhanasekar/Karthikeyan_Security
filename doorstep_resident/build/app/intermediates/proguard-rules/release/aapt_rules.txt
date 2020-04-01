@@ -1,0 +1,16 @@
+# Referenced at E:\Login\doorstep_resident\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:21
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at E:\Login\doorstep_resident\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:26
+-keep class com.example.doorstep_resident.MainActivity { <init>(); }
+# Referenced at E:\Login\doorstep_resident\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:92
+-keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(); }
+# Referenced at E:\Login\doorstep_resident\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:78
+-keep class com.google.firebase.auth.internal.FederatedSignInActivity { <init>(); }
+# Referenced at E:\Login\doorstep_resident\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:47
+-keep class com.google.firebase.components.ComponentDiscoveryService { <init>(); }
+# Referenced at E:\Login\doorstep_resident\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:86
+-keep class com.google.firebase.provider.FirebaseInitProvider { <init>(); }
+# Referenced at E:\Login\doorstep_resident\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:21
+-keep class io.flutter.app.FlutterApplication { <init>(); }
+# Referenced at E:\Login\doorstep_resident\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:74
+-keep class io.flutter.plugins.urllauncher.WebViewActivity { <init>(); }
