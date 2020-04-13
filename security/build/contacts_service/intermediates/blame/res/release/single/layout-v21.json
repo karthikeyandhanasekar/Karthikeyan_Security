@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\DoorStep (Phone auth)\\security\\build\\contacts_service\\intermediates\\res\\merged\\release\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\karthikeyan\\.gradle\\caches\\transforms-2\\files-2.1\\3f003e2cfc9865ae49ff938367e20140\\core-1.0.0\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "E:\\DoorStep (Phone auth)\\security\\build\\contacts_service\\intermediates\\res\\merged\\release\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\karthikeyan\\.gradle\\caches\\transforms-2\\files-2.1\\3f003e2cfc9865ae49ff938367e20140\\core-1.0.0\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "E:\\DoorStep (Phone auth)\\security\\build\\contacts_service\\intermediates\\res\\merged\\release\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\karthikeyan\\.gradle\\caches\\transforms-2\\files-2.1\\3f003e2cfc9865ae49ff938367e20140\\core-1.0.0\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "E:\\DoorStep (Phone auth)\\security\\build\\contacts_service\\intermediates\\res\\merged\\release\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\karthikeyan\\.gradle\\caches\\transforms-2\\files-2.1\\3f003e2cfc9865ae49ff938367e20140\\core-1.0.0\\res\\layout-v21\\notification_template_custom_big.xml"
+    }
+]

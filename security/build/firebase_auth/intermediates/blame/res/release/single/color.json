@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\DoorStep (Phone auth)\\security\\build\\firebase_auth\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\karthikeyan\\.gradle\\caches\\transforms-2\\files-2.1\\81afe58a448e3ee778bc0f2a4c0fa85d\\play-services-base-17.1.0\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "E:\\DoorStep (Phone auth)\\security\\build\\firebase_auth\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\karthikeyan\\.gradle\\caches\\transforms-2\\files-2.1\\81afe58a448e3ee778bc0f2a4c0fa85d\\play-services-base-17.1.0\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "E:\\DoorStep (Phone auth)\\security\\build\\firebase_auth\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_tint.xml",
+        "source": "C:\\Users\\karthikeyan\\.gradle\\caches\\transforms-2\\files-2.1\\81afe58a448e3ee778bc0f2a4c0fa85d\\play-services-base-17.1.0\\res\\color\\common_google_signin_btn_tint.xml"
+    }
+]

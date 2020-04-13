@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.13.0+1/android" />
+            <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.3+3/android" />
+            <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.1.1+2/android" />
+            <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_open_whatsapp-0.1.2/android" />
+            <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_sms-1.1.0/android" />
+            <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.0/android" />
+            <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/share-0.6.3+5/android" />
+            <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.2.0/android" />
+            <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/whatsapp_stickers-0.0.1/android" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
