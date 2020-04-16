@@ -3,10 +3,12 @@ import 'package:chatting/signin/register.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Signin extends StatefulWidget {
+class Signin extends StatefulWidget {             //Login Page
   @override
   _SigninState createState() => _SigninState();
 }
+
+
 
 final _formKey = new GlobalKey<FormState>();
 TextEditingController emailcontroller = new TextEditingController();
@@ -19,7 +21,8 @@ class _SigninState extends State<Signin> {
   String get _email => emailcontroller.text.trim();
   String get _password => passswordcontroller.text;
 
-  Widget showEmailInput() {
+  //email input
+  Widget showEmailInput() {                     
     return Padding(
       padding: const EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 0.0),
       child: new TextFormField(
@@ -43,7 +46,8 @@ class _SigninState extends State<Signin> {
       ),
     );
   }
-
+  
+  //password input
   Widget showPasswordInput() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(10.0, 15.0, 0.0, 0.0),
@@ -64,11 +68,12 @@ class _SigninState extends State<Signin> {
       ),
     );
   }
-
+  
+//login function which process when u click login button
   void login(BuildContext context) async {
     try {
-      final auth = Provider.of<BaseAuth>(context, listen: false);
-      await auth.signin(_email, _password);
+      final auth = Provider.of<BaseAuth>(context, listen: false);   // get the abstract class BaseAuthh from authclass.dart by using provider package
+      await auth.signin(_email, _password);    //get singin method
 
       passswordcontroller.clear();
     } catch (e) {
@@ -105,7 +110,7 @@ class _SigninState extends State<Signin> {
                   borderRadius: BorderRadius.circular(5.0)),
               color: Theme.of(context).cardColor,
               elevation: 5.0,
-              child: showForm(context),
+              child: showForm(context),    // initialze the showform function which contain form field
             ),
           ),
         ));
@@ -118,11 +123,11 @@ class _SigninState extends State<Signin> {
             child: ListView(
               padding: EdgeInsets.fromLTRB(0.0, 10, 35.0, 10),
               children: <Widget>[
-                showEmailInput(),
+                showEmailInput(),  //email 
                 SizedBox(
                   height: 10.0,
                 ),
-                showPasswordInput(),
+                showPasswordInput(),  //password
                 SizedBox(
                   height: 10.0,
                 ),
@@ -143,7 +148,7 @@ class _SigninState extends State<Signin> {
                         )),
                   ),
                 ),
-                FlatButton(
+                FlatButton(          //buttom to enter to register page  remove flatbutton if u didn't want register feature
                     onPressed: () => register(),
                     child: Text(
                       ' OR Create!',
@@ -158,7 +163,7 @@ class _SigninState extends State<Signin> {
             )));
   }
 
-  register() {
+  register() {                   // it push to register page 
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => Register()));
   }
