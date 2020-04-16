@@ -15,11 +15,11 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primaryColor: Colors.indigo[700],
             accentColor: Colors.indigo,
-            backgroundColor: Colors.indigo[100],
-            cardColor: Colors.indigo[100],
+            backgroundColor: Colors.indigo[100],      //change here to change all the background color of each page
+            cardColor: Colors.indigo[100],             //change here to change all the card color of each page
           ),
-          darkTheme: ThemeData.dark(),
-          debugShowCheckedModeBanner: false,
+          darkTheme: ThemeData.dark(),                 //dark theme
+          debugShowCheckedModeBanner: false,            //remove the debug banner while in debug mode
           home: LandingPage()),
     );
   }
