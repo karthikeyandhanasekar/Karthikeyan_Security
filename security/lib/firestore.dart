@@ -29,26 +29,26 @@ String date = DateFormat.yMMMMEEEEd().format(DateTime.now());
 String time = DateFormat.jm().format(DateTime.now());
 String documentid;
 
-String block, customer, number, reason;
+String block, customer, number, reason;    // the variable which used to pass the value to database it important
 
 final _formkey = GlobalKey<FormState>();
 
 class _DetailsState extends State<Details> {
-  bool _validateandSaveForm() {
+  bool _validateandSaveForm() {                      //   it validate the form given below
     final form = _formkey.currentState;
-    if (form.validate()) {
-      form.save();
+    if (form.validate()) {         
+      form.save();                     // it save the form with current value
       return true;
     }
     return false;
   }
 
   void _submit() async {
-    if (_validateandSaveForm()) {
-      final database = Provider.of<Database>(context, listen: false);
+    if (_validateandSaveForm()) {                                                     //check the  bool function
+      final database = Provider.of<Database>(context, listen: false);                      //get database abstract class from database folder and initalize to final database using provider package
 
-      print('form saved : $reason and $number');
-      final view = Senddata(
+      print('form saved : $reason and $number');    
+      final view = Senddata(                                       //ths is the process where the data is stored
           blockid: block,
           Customername: customer,
           Customernumber: number,
@@ -77,7 +77,8 @@ class _DetailsState extends State<Details> {
     }
   }
 
-  void share() async {
+   //it is the share function used to share to any way
+  void share() async {                 
     final String share1 =
         'DoorStep Security System \n \n\n\n\n Block ID: ${blockcontroller.text.trim()} ,\nDoor ID: ${doorcontroller.text.trim()} \nVisitor: ${customercontroller.text.trim()} ,\nVisitor number: ${customernumcontroller.text.trim()},\n Date  : $date, \nTime : $time ,\nReason : ${purposecontroller.text}';
     final RenderBox box = context.findRenderObject();
@@ -85,7 +86,8 @@ class _DetailsState extends State<Details> {
         subject: 'DoorStep Security Services',
         sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
   }
-
+  
+  //it is logout function
   Future<void> logout(BuildContext context) async {
     try {
       final auth = Provider.of<BaseAuth>(context, listen: false);
@@ -104,7 +106,7 @@ class _DetailsState extends State<Details> {
   }
 
   Future<void> confirmsignout(BuildContext context) async {
-    final didrequest = await PlatformAlertDialog(
+    final didrequest = await PlatformAlertDialog(                                   // a platfrom alert dialog which get form platfrom file and it maunal
       title: 'Log out',
       content: 'Are you sure',
       cancelactiontext: 'Cancel',
@@ -157,7 +159,7 @@ class _DetailsState extends State<Details> {
     );
   }
 
-  List<Widget> _buildformchildren() {
+  List<Widget> _buildformchildren() {                                                   //field and button inside the card
     return [
       TextFormField(
         autofocus: true,
@@ -248,7 +250,7 @@ class _DetailsState extends State<Details> {
       ),
       OutlineButton.icon(
         icon: Icon(Icons.save),
-        onPressed: () => _submit(),
+        onPressed: () => _submit(),             // a button which  store and share the data through whatsapp
         label: Text(
           'Save',
           style: TextStyle(
