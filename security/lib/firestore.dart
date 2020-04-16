@@ -29,7 +29,7 @@ String date = DateFormat.yMMMMEEEEd().format(DateTime.now());
 String time = DateFormat.jm().format(DateTime.now());
 String documentid;
 
-String block, customer, number, reason;    // the variable which used to pass the value to database it important
+String block, customer, number, reason; // the variable which used to pass the value to database it important
 
 final _formkey = GlobalKey<FormState>();
 
@@ -44,8 +44,8 @@ class _DetailsState extends State<Details> {
   }
 
   void _submit() async {
-    if (_validateandSaveForm()) {                                                     //check the  bool function
-      final database = Provider.of<Database>(context, listen: false);                      //get database abstract class from database folder and initalize to final database using provider package
+    if (_validateandSaveForm()) {                                    //check the  bool function
+      final database = Provider.of<Database>(context, listen: false);  //get database abstract class from database folder and initalize to final database using provider package
 
       print('form saved : $reason and $number');    
       final view = Senddata(                                       //ths is the process where the data is stored
@@ -159,7 +159,7 @@ class _DetailsState extends State<Details> {
     );
   }
 
-  List<Widget> _buildformchildren() {                                                   //field and button inside the card
+  List<Widget> _buildformchildren() {                                                   //input field and button inside the card
     return [
       TextFormField(
         autofocus: true,
