@@ -5,18 +5,13 @@ INJECTED from E:\DoorStep (Phone auth)\security\android\app\src\main\AndroidMani
 INJECTED from E:\DoorStep (Phone auth)\security\android\app\src\main\AndroidManifest.xml:1:1-30:12
 INJECTED from E:\DoorStep (Phone auth)\security\android\app\src\main\AndroidManifest.xml:1:1-30:12
 MERGED from E:\DoorStep (Phone auth)\security\android\app\src\main\AndroidManifest.xml:1:1-30:12
-MERGED from [:contacts_service] E:\DoorStep (Phone auth)\security\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:firebase_auth] E:\DoorStep (Phone auth)\security\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
-MERGED from [:firebase_auth_web] E:\DoorStep (Phone auth)\security\build\firebase_auth_web\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:cloud_firestore] E:\DoorStep (Phone auth)\security\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] E:\DoorStep (Phone auth)\security\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core_web] E:\DoorStep (Phone auth)\security\build\firebase_core_web\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:fluttercontactpicker] E:\DoorStep (Phone auth)\security\build\fluttercontactpicker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:contact_picker] E:\DoorStep (Phone auth)\security\build\contact_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:firebase_auth_web] E:\DoorStep (Phone auth)\security\build\firebase_auth_web\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_open_whatsapp] E:\DoorStep (Phone auth)\security\build\flutter_open_whatsapp\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_sms] E:\DoorStep (Phone auth)\security\build\flutter_sms\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] E:\DoorStep (Phone auth)\security\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:native_contact_picker] E:\DoorStep (Phone auth)\security\build\native_contact_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [:share] E:\DoorStep (Phone auth)\security\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\karthikeyan\.gradle\caches\transforms-2\files-2.1\61cfe042a6ae1ddcd914c59f93164671\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-analytics:17.2.2] C:\Users\karthikeyan\.gradle\caches\transforms-2\files-2.1\3c4448b5028ac9ff85bbb45459ec94ad\firebase-analytics-17.2.2\AndroidManifest.xml:2:1-9:12
@@ -172,30 +167,20 @@ uses-sdk
 INJECTED from E:\DoorStep (Phone auth)\security\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\DoorStep (Phone auth)\security\android\app\src\main\AndroidManifest.xml
 INJECTED from E:\DoorStep (Phone auth)\security\android\app\src\main\AndroidManifest.xml
-MERGED from [:contacts_service] E:\DoorStep (Phone auth)\security\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:contacts_service] E:\DoorStep (Phone auth)\security\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:firebase_auth] E:\DoorStep (Phone auth)\security\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] E:\DoorStep (Phone auth)\security\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth_web] E:\DoorStep (Phone auth)\security\build\firebase_auth_web\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth_web] E:\DoorStep (Phone auth)\security\build\firebase_auth_web\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] E:\DoorStep (Phone auth)\security\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] E:\DoorStep (Phone auth)\security\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] E:\DoorStep (Phone auth)\security\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] E:\DoorStep (Phone auth)\security\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core_web] E:\DoorStep (Phone auth)\security\build\firebase_core_web\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core_web] E:\DoorStep (Phone auth)\security\build\firebase_core_web\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:fluttercontactpicker] E:\DoorStep (Phone auth)\security\build\fluttercontactpicker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:fluttercontactpicker] E:\DoorStep (Phone auth)\security\build\fluttercontactpicker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:contact_picker] E:\DoorStep (Phone auth)\security\build\contact_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:contact_picker] E:\DoorStep (Phone auth)\security\build\contact_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:firebase_auth_web] E:\DoorStep (Phone auth)\security\build\firebase_auth_web\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth_web] E:\DoorStep (Phone auth)\security\build\firebase_auth_web\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_open_whatsapp] E:\DoorStep (Phone auth)\security\build\flutter_open_whatsapp\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_open_whatsapp] E:\DoorStep (Phone auth)\security\build\flutter_open_whatsapp\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_sms] E:\DoorStep (Phone auth)\security\build\flutter_sms\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_sms] E:\DoorStep (Phone auth)\security\build\flutter_sms\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] E:\DoorStep (Phone auth)\security\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] E:\DoorStep (Phone auth)\security\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:native_contact_picker] E:\DoorStep (Phone auth)\security\build\native_contact_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:native_contact_picker] E:\DoorStep (Phone auth)\security\build\native_contact_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:share] E:\DoorStep (Phone auth)\security\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:share] E:\DoorStep (Phone auth)\security\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\karthikeyan\.gradle\caches\transforms-2\files-2.1\61cfe042a6ae1ddcd914c59f93164671\multidex-2.0.0\AndroidManifest.xml:20:5-43
@@ -358,10 +343,6 @@ ADDED from [:firebase_core] E:\DoorStep (Phone auth)\security\build\firebase_cor
 		ADDED from [:firebase_core] E:\DoorStep (Phone auth)\security\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:firebase_core] E:\DoorStep (Phone auth)\security\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-123
-uses-permission#android.permission.READ_CONTACTS
-ADDED from [:native_contact_picker] E:\DoorStep (Phone auth)\security\build\native_contact_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-72
-	android:name
-		ADDED from [:native_contact_picker] E:\DoorStep (Phone auth)\security\build\native_contact_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:22-69
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
 ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\karthikeyan\.gradle\caches\transforms-2\files-2.1\3fea6b72018b28b472cf7d10c03aabd6\firebase-auth-19.2.0\AndroidManifest.xml:24:9-31:50
 	android:excludeFromRecents

@@ -1,3 +1,4 @@
+import 'package:chatting/Remainder.dart';
 import 'package:chatting/database/database.dart';
 import 'package:chatting/database/model.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,16 @@ import 'package:chatting/platoformalertdialog.dart';
 import 'package:chatting/signin/authclass.dart';
 
 class Details extends StatefulWidget {
+  final Database database;
+  const Details({Key key, @required this.database}) : super(key: key);
+
+  static Future<void> show(BuildContext context) async {
+    final database = Provider.of<Database>(context, listen: false);
+    await Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => Details(
+              database: database,
+            )));
+  }
   @override
   _DetailsState createState() => _DetailsState();
 }
@@ -33,6 +44,7 @@ String block, customer, number, reason;
 
 final _formkey = GlobalKey<FormState>();
 
+
 class _DetailsState extends State<Details> {
   bool _validateandSaveForm() {
     final form = _formkey.currentState;
@@ -45,7 +57,8 @@ class _DetailsState extends State<Details> {
 
   void _submit() async {
     if (_validateandSaveForm()) {
-      final database = Provider.of<Database>(context, listen: false);
+            //final database = Provider.of<Database>(context, listen: false);
+
 
       print('form saved : $reason and $number');
       final view = Senddata(
@@ -57,15 +70,12 @@ class _DetailsState extends State<Details> {
           time: time,
           reason: reason,
           id: documentid);
-
-      await database.createviewer(view);
+            await widget.database.createviewer(view);
+     // await database.createviewer(view);
       Navigator.of(context).pop();
 
-      String custname = customercontroller.text;
-      String custnum = customernumcontroller.text;
-      String purpose = purposecontroller.text;
       final String information =
-          'DoorStep Security System \n \n\n\n\nBlock ID: ${blockcontroller.text.trim()} ,\nDoor ID: ${doorcontroller.text.trim()} Visitor: $custname ,\nVisitor number: $custnum,\n Date  : $date, \nTime : $time ,\nReason : $purpose';
+          'DoorStep Security System \n \n\n\n\nBlock ID: ${blockcontroller.text.trim()} ,\nDoor ID: ${doorcontroller.text.trim()} Visitor: ${customercontroller.text.trim()} ,\nVisitor number: ${customernumcontroller.text.trim()},\n Date  : $date, \nTime : $time ,\nReason : $purpose';
       FlutterOpenWhatsapp.sendSingleMessage(
           "+91${phoneNumcontroller.text.trim()}", information);
       blockcontroller.clear();
@@ -118,7 +128,7 @@ class _DetailsState extends State<Details> {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        title: Text('Viewer details'),
+        title: Text('Visitor details'),
         elevation: 20.0,
         actions: <Widget>[
           IconButton(icon: Icon(Icons.share), onPressed: () => share()),
@@ -130,6 +140,7 @@ class _DetailsState extends State<Details> {
               onPressed: () => confirmsignout(context)),
         ],
       ),
+      floatingActionButton: FloatingActionButton.extended(onPressed: () => RemainderDisplay.show(context), label: Text("Remainder")),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(25.0),
@@ -144,6 +155,15 @@ class _DetailsState extends State<Details> {
       ),
     );
   }
+  /*void navigatetoreaminder()
+  {
+                final databasetoremainder = Provider.of<Database>(context, listen: false);
+
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => RemainderDisplay.show())
+    );
+    
+  }*/
 
   Widget form() {
     return SingleChildScrollView(

@@ -16,12 +16,12 @@
         "source": "C:\\Users\\karthikeyan\\.gradle\\caches\\transforms-2\\files-2.1\\81afe58a448e3ee778bc0f2a4c0fa85d\\play-services-base-17.1.0\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
     },
     {
-        "merged": "E:\\DoorStep (Phone auth)\\security\\build\\app\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
-        "source": "C:\\Users\\karthikeyan\\.gradle\\caches\\transforms-2\\files-2.1\\3f003e2cfc9865ae49ff938367e20140\\core-1.0.0\\res\\layout\\notification_template_part_chronometer.xml"
-    },
-    {
         "merged": "E:\\DoorStep (Phone auth)\\security\\build\\app\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_tint.xml.flat",
         "source": "C:\\Users\\karthikeyan\\.gradle\\caches\\transforms-2\\files-2.1\\81afe58a448e3ee778bc0f2a4c0fa85d\\play-services-base-17.1.0\\res\\color\\common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "E:\\DoorStep (Phone auth)\\security\\build\\app\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
+        "source": "C:\\Users\\karthikeyan\\.gradle\\caches\\transforms-2\\files-2.1\\3f003e2cfc9865ae49ff938367e20140\\core-1.0.0\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
         "merged": "E:\\DoorStep (Phone auth)\\security\\build\\app\\intermediates\\res\\merged\\debug\\layout_notification_template_part_time.xml.flat",
