@@ -57,7 +57,7 @@ class _ShowState extends State<Show> {
 
   Widget _buildcontext(BuildContext context) {
     final database = Provider.of<Database>(context, listen: false);
-    return StreamBuilder<List<Senddata>>(
+    return StreamBuilder<List<Senddata>>(                              //display the data
         stream: database.readview(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
