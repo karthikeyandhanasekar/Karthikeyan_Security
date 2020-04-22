@@ -1,4 +1,6 @@
-import 'package:chatting/Remainder.dart';
+import 'package:chatting/Remainder/Cab.dart';
+import 'package:chatting/Remainder/delivery.dart';
+import 'package:chatting/Remainder/vistor.dart';
 import 'package:chatting/database/database.dart';
 import 'package:chatting/database/model.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +10,10 @@ import 'package:share/share.dart';
 import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 import 'package:chatting/platoformalertdialog.dart';
 import 'package:chatting/signin/authclass.dart';
+import 'package:fab_menu/fab_menu.dart';
 
 class Details extends StatefulWidget {
-  final Database database;
+  /*final Database database;
   const Details({Key key, @required this.database}) : super(key: key);
 
   static Future<void> show(BuildContext context) async {
@@ -19,7 +22,7 @@ class Details extends StatefulWidget {
         builder: (context) => Details(
               database: database,
             )));
-  }
+  }*/
   @override
   _DetailsState createState() => _DetailsState();
 }
@@ -43,9 +46,28 @@ String documentid;
 String block, customer, number, reason;
 
 final _formkey = GlobalKey<FormState>();
-
+List<MenuData> menuDataList;
 
 class _DetailsState extends State<Details> {
+  void initState() {
+    super.initState();
+    menuDataList = [
+      new MenuData(Icons.local_taxi, (context, menuData) {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => Cab()));
+      }, labelText: 'Cab',),
+      new MenuData(Icons.fastfood, (context, menuData) {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => Delivery()));
+      }, labelText: 'Delivery'),
+      new MenuData(Icons.people, (context, menuData) {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => Visitor()));
+      }, labelText: 'Visitor'),
+      
+    ];
+  }
+
   bool _validateandSaveForm() {
     final form = _formkey.currentState;
     if (form.validate()) {
@@ -57,8 +79,7 @@ class _DetailsState extends State<Details> {
 
   void _submit() async {
     if (_validateandSaveForm()) {
-            //final database = Provider.of<Database>(context, listen: false);
-
+      final database = Provider.of<Database>(context, listen: false);
 
       print('form saved : $reason and $number');
       final view = Senddata(
@@ -70,12 +91,11 @@ class _DetailsState extends State<Details> {
           time: time,
           reason: reason,
           id: documentid);
-            await widget.database.createviewer(view);
-     // await database.createviewer(view);
+      await database.createviewer(view);
       Navigator.of(context).pop();
 
       final String information =
-          'DoorStep Security System \n \n\n\n\nBlock ID: ${blockcontroller.text.trim()} ,\nDoor ID: ${doorcontroller.text.trim()} Visitor: ${customercontroller.text.trim()} ,\nVisitor number: ${customernumcontroller.text.trim()},\n Date  : $date, \nTime : $time ,\nReason : $purpose';
+          'DoorStep Security System \n\n\n\n\nBlock ID: ${blockcontroller.text.trim()}\nDoor ID: ${doorcontroller.text.trim()},Visitor: ${customercontroller.text.trim()}\nVisitor number: ${customernumcontroller.text.trim()}\nDate  : $date\nTime : $time\nReason : $purpose';
       FlutterOpenWhatsapp.sendSingleMessage(
           "+91${phoneNumcontroller.text.trim()}", information);
       blockcontroller.clear();
@@ -102,14 +122,14 @@ class _DetailsState extends State<Details> {
       auth.signout();
     } catch (e) {
       print(e.toString());
-      showDialog(context: context,
-      builder: (BuildContext context)
-      {
-        return AlertDialog(
-          title: Text("LogOut Failed"),
-          content: Text("${e.toString()}"),
-        ); 
-      });
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("LogOut Failed"),
+              content: Text("${e.toString()}"),
+            );
+          });
     }
   }
 
@@ -126,10 +146,13 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
+
       appBar: AppBar(
-        title: Text('Visitor details'),
+        title: Text('DoorStep'),
         elevation: 20.0,
+              backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
+
         actions: <Widget>[
           IconButton(icon: Icon(Icons.share), onPressed: () => share()),
           FlatButton(
@@ -140,30 +163,32 @@ class _DetailsState extends State<Details> {
               onPressed: () => confirmsignout(context)),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(onPressed: () => RemainderDisplay.show(context), label: Text("Remainder")),
+      floatingActionButton: new FabMenu(
+        menus: menuDataList,
+        maskColor: null,
+        mainIcon: Icons.menu,
+        mainButtonColor: Colors.blueGrey,
+        mainButtonBackgroundColor: Colors.tealAccent,
+        menuButtonBackgroundColor: Colors.white,
+        labelTextColor: Colors.blueAccent,
+        labelBackgroundColor: Colors.white,
+        
+      ),
+      floatingActionButtonLocation: fabMenuLocation,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(25.0),
           child: Card(
               elevation: 5.0,
+              color : Color.fromRGBO(64, 75, 96, .9),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0),
               ),
-              color: Theme.of(context).cardColor,
               child: form()),
         ),
       ),
     );
   }
-  /*void navigatetoreaminder()
-  {
-                final databasetoremainder = Provider.of<Database>(context, listen: false);
-
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => RemainderDisplay.show())
-    );
-    
-  }*/
 
   Widget form() {
     return SingleChildScrollView(
@@ -180,64 +205,67 @@ class _DetailsState extends State<Details> {
   List<Widget> _buildformchildren() {
     return [
       TextFormField(
-        autofocus: true,
-        style: TextStyle(fontSize: 17.0, color: Colors.black),
+        style: TextStyle(fontSize: 17.0, color: Colors.grey[100]),
         controller: blockcontroller,
         decoration: InputDecoration(
             labelText: 'Block ID',
-            icon: Icon(Icons.domain),
+            icon: Icon(Icons.domain ,color: Colors.grey[500],),
             labelStyle: TextStyle(
               fontWeight: FontWeight.w500,
+              color: Colors.grey[500],
             )),
         onSaved: (value) => block = value.trim(), //remove trim
       ),
       TextFormField(
-        autofocus: true,
-        style: TextStyle(fontSize: 17.0, color: Colors.black),
+        style: TextStyle(fontSize: 17.0, color: Colors.grey[100]),
         controller: doorcontroller,
         decoration: InputDecoration(
             labelText: 'DoorID',
-            icon: Icon(Icons.domain),
+            icon: Icon(Icons.domain, color: Colors.grey[500]),
             labelStyle: TextStyle(
               fontWeight: FontWeight.w500,
+              color: Colors.grey[500]
             )),
       ),
       TextFormField(
-        style: TextStyle(fontSize: 17.0, color: Colors.black),
+        style: TextStyle(fontSize: 17.0, color: Colors.grey[100]),
         controller: customercontroller,
         decoration: InputDecoration(
           labelText: 'Visitor',
-          icon: Icon(Icons.people),
+          icon: Icon(Icons.people,color: Colors.grey[500]),
           labelStyle: TextStyle(
             fontWeight: FontWeight.w500,
+            color: Colors.grey[500]
           ),
         ),
         onSaved: (value) => customer = value,
       ),
       TextFormField(
-        style: TextStyle(fontSize: 17.0, color: Colors.black),
-        autofocus: true,
+        style: TextStyle(fontSize: 17.0, color: Colors.grey[100]),
         maxLength: 10,
+         
         controller: customernumcontroller,
         decoration: InputDecoration(
           labelText: 'Visitor number',
-          icon: Icon(Icons.add_call),
+          
+          icon: Icon(Icons.add_call,color: Colors.grey[500]),
           labelStyle: TextStyle(
             fontWeight: FontWeight.w500,
+            color: Colors.grey[500]
           ),
         ),
         onSaved: (value) => number = value,
-        keyboardType: TextInputType.numberWithOptions(),
+        keyboardType: TextInputType.phone,
       ),
       TextFormField(
-        style: TextStyle(fontSize: 17.0, color: Colors.black),
-        autofocus: true,
+        style: TextStyle(fontSize: 17.0, color: Colors.grey[100]),
         controller: purposecontroller,
         decoration: InputDecoration(
           labelText: 'Reason',
-          icon: Icon(Icons.question_answer),
+          icon: Icon(Icons.question_answer,color: Colors.grey[500]),
           labelStyle: TextStyle(
             fontWeight: FontWeight.w500,
+            color: Colors.grey[500]
           ),
         ),
         onSaved: (value) => reason = value,
@@ -248,31 +276,32 @@ class _DetailsState extends State<Details> {
       Text("To :",
           textAlign: TextAlign.left,
           style: TextStyle(
-            color: Colors.blueGrey[800],
+            color: Colors.grey[100],
             fontSize: 15.0,
             textBaseline: TextBaseline.alphabetic,
             fontWeight: FontWeight.w800,
             fontFamily: 'Roboto',
           )),
       TextFormField(
-        autofocus: true,
-        style: TextStyle(fontSize: 17.0, color: Colors.black),
+        style: TextStyle(fontSize: 17.0, color: Colors.grey[100]),
         maxLength: 10,
         controller: phoneNumcontroller,
+        keyboardType: TextInputType.phone,
         decoration: InputDecoration(
             labelText: 'Resident Number',
-            icon: Icon(Icons.phone_forwarded),
+            icon: Icon(Icons.phone_forwarded,color: Colors.grey[500]),
             labelStyle: TextStyle(
               fontWeight: FontWeight.w500,
+              color: Colors.grey[500]
             )),
       ),
       OutlineButton.icon(
-        icon: Icon(Icons.save),
+        icon: Icon(Icons.save,color: Colors.grey[500]),
         onPressed: () => _submit(),
         label: Text(
           'Save',
           style: TextStyle(
-            color: Colors.blueGrey[800],
+            color:  Colors.grey[100],
             fontSize: 15.0,
           ),
         ),

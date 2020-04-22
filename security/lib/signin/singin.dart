@@ -23,9 +23,10 @@ class _SigninState extends State<Signin> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 0.0),
       child: new TextFormField(
+
         controller: emailcontroller,
         style: TextStyle(
-          color: Colors.black,
+          color: Colors.grey[100],
           fontSize: 18.0,
         ),
         maxLines: 1,
@@ -34,6 +35,7 @@ class _SigninState extends State<Signin> {
         enabled: _isloading == false,
         decoration: new InputDecoration(
             hintText: 'Email',
+            hintStyle: TextStyle(color : Colors.grey[500]),
             icon: new Icon(
               Icons.mail,
               color: Colors.grey,
@@ -48,16 +50,19 @@ class _SigninState extends State<Signin> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(10.0, 15.0, 0.0, 0.0),
       child: new TextFormField(
+        style: TextStyle(color: Colors.grey[100]),
         controller: passswordcontroller,
         maxLines: 1,
         obscureText: true,
         autofocus: false,
         enabled: _isloading == false,
+        keyboardType: TextInputType.visiblePassword,
         decoration: new InputDecoration(
             hintText: 'Password',
+            hintStyle: TextStyle(color: Colors.grey[500]),
             icon: new Icon(
               Icons.lock,
-              color: Colors.grey,
+              color: Colors.grey[500],
             )),
         validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
         // onSaved: (value) => _password = value.trim(),
@@ -92,8 +97,9 @@ class _SigninState extends State<Signin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
         appBar: AppBar(
+          backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
           title: Text('Security'),
           elevation: 20.0,
         ),
@@ -103,8 +109,8 @@ class _SigninState extends State<Signin> {
             child: Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5.0)),
-              color: Theme.of(context).cardColor,
               elevation: 5.0,
+              color: Color.fromRGBO(64, 75, 96, .9),
               child: showForm(context),
             ),
           ),
@@ -136,14 +142,14 @@ class _SigninState extends State<Signin> {
                     child: Text('Login',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Colors.blueGrey[600],
+                          color: Colors.grey[100],
                           fontSize: 20.0,
                           textBaseline: TextBaseline.alphabetic,
                           fontWeight: FontWeight.w800,
                         )),
                   ),
                 ),
-                FlatButton(
+                /* FlatButton(
                     onPressed: () => register(),
                     child: Text(
                       ' OR Create!',
@@ -153,7 +159,7 @@ class _SigninState extends State<Signin> {
                         color: Colors.blueGrey[600],
                         fontSize: 15.0,
                       ),
-                    ))
+                    ))*/
               ],
             )));
   }

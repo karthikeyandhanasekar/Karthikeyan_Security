@@ -1,6 +1,5 @@
 import 'package:chatting/database/database.dart';
 import 'package:chatting/firestore.dart';
-import 'package:chatting/show.dart';
 import 'package:chatting/signin/singin.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,10 +19,8 @@ class LandingPage extends StatelessWidget {
               return Signin();
             } else {
               return Provider<Database>(
-                create: (_) => FirestoreDatabase(uid: user.uid),
-                //child: Details(),);
-                child:  Show()
-              );
+                  create: (_) => FirestoreDatabase(uid: user.uid),
+                  child: Details());
             }
           } else {
             return Scaffold(
