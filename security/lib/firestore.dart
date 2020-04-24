@@ -92,7 +92,7 @@ class _DetailsState extends State<Details> {
           reason: reason,
           id: documentid);
       await database.createviewer(view);
-      Navigator.of(context).pop();
+      //Navigator.of(context).pop();
 
       final String information =
           'DoorStep Security System \n\n\n\n\nBlock ID: ${blockcontroller.text.trim()}\nDoor ID: ${doorcontroller.text.trim()},Visitor: ${customercontroller.text.trim()}\nVisitor number: ${customernumcontroller.text.trim()}\nDate  : $date\nTime : $time\nReason : $purpose';
