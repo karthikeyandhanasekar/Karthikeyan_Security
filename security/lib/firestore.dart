@@ -33,6 +33,7 @@ TextEditingController customercontroller = new TextEditingController();
 TextEditingController customernumcontroller = new TextEditingController();
 TextEditingController purposecontroller = new TextEditingController();
 TextEditingController phoneNumcontroller = new TextEditingController();
+TextEditingController companycontroller = new TextEditingController();
 
 final String blockno = blockcontroller.text;
 String doorno = doorcontroller.text;
@@ -52,10 +53,14 @@ class _DetailsState extends State<Details> {
   void initState() {
     super.initState();
     menuDataList = [
-      new MenuData(Icons.local_taxi, (context, menuData) {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Cab()));
-      }, labelText: 'Cab',),
+      new MenuData(
+        Icons.local_taxi,
+        (context, menuData) {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => Cab()));
+        },
+        labelText: 'Cab',
+      ),
       new MenuData(Icons.fastfood, (context, menuData) {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => Delivery()));
@@ -64,7 +69,6 @@ class _DetailsState extends State<Details> {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => Visitor()));
       }, labelText: 'Visitor'),
-      
     ];
   }
 
@@ -90,12 +94,13 @@ class _DetailsState extends State<Details> {
           doorno: doorcontroller.text.trim(),
           time: time,
           reason: reason,
+          company: companycontroller.text.trim(),
           id: documentid);
       await database.createviewer(view);
-      Navigator.of(context).pop();
+      //Navigator.of(context).pop();
 
       final String information =
-          'DoorStep Security System \n\n\n\n\nBlock ID: ${blockcontroller.text.trim()}\nDoor ID: ${doorcontroller.text.trim()},Visitor: ${customercontroller.text.trim()}\nVisitor number: ${customernumcontroller.text.trim()}\nDate  : $date\nTime : $time\nReason : $purpose';
+          'DoorStep Security System \n\n\n\n\nBlock ID: ${blockcontroller.text.trim()}\nDoor ID: ${doorcontroller.text.trim()}\nVisitor: ${customercontroller.text.trim()}\nVisitor number: ${customernumcontroller.text.trim()}\nDate  : $date\nTime : $time\nCompany:${companycontroller.text.trim()}\nReason : $purpose';
       FlutterOpenWhatsapp.sendSingleMessage(
           "+91${phoneNumcontroller.text.trim()}", information);
       blockcontroller.clear();
@@ -104,12 +109,13 @@ class _DetailsState extends State<Details> {
       customercontroller.clear();
       purposecontroller.clear();
       phoneNumcontroller.clear();
+      companycontroller.clear();
     }
   }
 
   void share() async {
     final String share1 =
-        'DoorStep Security System \n \n\n\n\n Block ID: ${blockcontroller.text.trim()} ,\nDoor ID: ${doorcontroller.text.trim()} \nVisitor: ${customercontroller.text.trim()} ,\nVisitor number: ${customernumcontroller.text.trim()},\n Date  : $date, \nTime : $time ,\nReason : ${purposecontroller.text}';
+        'DoorStep Security System \n\n\n\n\n Block ID: ${blockcontroller.text.trim()}\nDoor ID: ${doorcontroller.text.trim()}\nVisitor: ${customercontroller.text.trim()}\nVisitor number: ${customernumcontroller.text.trim()},\n Date  : $date, \nTime : $time\nCompany:${companycontroller.text.trim()}\nReason : ${purposecontroller.text}';
     final RenderBox box = context.findRenderObject();
     Share.share(share1,
         subject: 'DoorStep Security Services',
@@ -147,12 +153,10 @@ class _DetailsState extends State<Details> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
-
       appBar: AppBar(
-        title: Text('DoorStep'),
+        title: Text('Details'),
         elevation: 20.0,
-              backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
-
+        backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.share), onPressed: () => share()),
           FlatButton(
@@ -172,15 +176,14 @@ class _DetailsState extends State<Details> {
         menuButtonBackgroundColor: Colors.white,
         labelTextColor: Colors.blueAccent,
         labelBackgroundColor: Colors.white,
-        
       ),
       floatingActionButtonLocation: fabMenuLocation,
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(25.0),
+          padding: const EdgeInsets.all(15.0),
           child: Card(
               elevation: 5.0,
-              color : Color.fromRGBO(64, 75, 96, .9),
+              color: Color.fromRGBO(64, 75, 96, .9),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0),
               ),
@@ -209,7 +212,10 @@ class _DetailsState extends State<Details> {
         controller: blockcontroller,
         decoration: InputDecoration(
             labelText: 'Block ID',
-            icon: Icon(Icons.domain ,color: Colors.grey[500],),
+            icon: Icon(
+              Icons.domain,
+              color: Colors.grey[500],
+            ),
             labelStyle: TextStyle(
               fontWeight: FontWeight.w500,
               color: Colors.grey[500],
@@ -223,50 +229,51 @@ class _DetailsState extends State<Details> {
             labelText: 'DoorID',
             icon: Icon(Icons.domain, color: Colors.grey[500]),
             labelStyle: TextStyle(
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[500]
-            )),
+                fontWeight: FontWeight.w500, color: Colors.grey[500])),
       ),
       TextFormField(
         style: TextStyle(fontSize: 17.0, color: Colors.grey[100]),
         controller: customercontroller,
         decoration: InputDecoration(
           labelText: 'Visitor',
-          icon: Icon(Icons.people,color: Colors.grey[500]),
-          labelStyle: TextStyle(
-            fontWeight: FontWeight.w500,
-            color: Colors.grey[500]
-          ),
+          icon: Icon(Icons.people, color: Colors.grey[500]),
+          labelStyle:
+              TextStyle(fontWeight: FontWeight.w500, color: Colors.grey[500]),
         ),
         onSaved: (value) => customer = value,
       ),
       TextFormField(
         style: TextStyle(fontSize: 17.0, color: Colors.grey[100]),
         maxLength: 10,
-         
         controller: customernumcontroller,
         decoration: InputDecoration(
           labelText: 'Visitor number',
-          
-          icon: Icon(Icons.add_call,color: Colors.grey[500]),
-          labelStyle: TextStyle(
-            fontWeight: FontWeight.w500,
-            color: Colors.grey[500]
-          ),
+          icon: Icon(Icons.add_call, color: Colors.grey[500]),
+          labelStyle:
+              TextStyle(fontWeight: FontWeight.w500, color: Colors.grey[500]),
         ),
         onSaved: (value) => number = value,
         keyboardType: TextInputType.phone,
       ),
       TextFormField(
         style: TextStyle(fontSize: 17.0, color: Colors.grey[100]),
+        controller: companycontroller,
+        decoration: InputDecoration(
+          labelText: 'Type',
+          icon: Icon(Icons.question_answer, color: Colors.grey[500]),
+          labelStyle:
+              TextStyle(fontWeight: FontWeight.w500, color: Colors.grey[500]),
+        ),
+        onSaved: (value) => reason = value,
+      ),
+      TextFormField(
+        style: TextStyle(fontSize: 17.0, color: Colors.grey[100]),
         controller: purposecontroller,
         decoration: InputDecoration(
           labelText: 'Reason',
-          icon: Icon(Icons.question_answer,color: Colors.grey[500]),
-          labelStyle: TextStyle(
-            fontWeight: FontWeight.w500,
-            color: Colors.grey[500]
-          ),
+          icon: Icon(Icons.question_answer, color: Colors.grey[500]),
+          labelStyle:
+              TextStyle(fontWeight: FontWeight.w500, color: Colors.grey[500]),
         ),
         onSaved: (value) => reason = value,
       ),
@@ -289,19 +296,17 @@ class _DetailsState extends State<Details> {
         keyboardType: TextInputType.phone,
         decoration: InputDecoration(
             labelText: 'Resident Number',
-            icon: Icon(Icons.phone_forwarded,color: Colors.grey[500]),
+            icon: Icon(Icons.phone_forwarded, color: Colors.grey[500]),
             labelStyle: TextStyle(
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[500]
-            )),
+                fontWeight: FontWeight.w500, color: Colors.grey[500])),
       ),
       OutlineButton.icon(
-        icon: Icon(Icons.save,color: Colors.grey[500]),
+        icon: Icon(Icons.save, color: Colors.grey[500]),
         onPressed: () => _submit(),
         label: Text(
           'Save',
           style: TextStyle(
-            color:  Colors.grey[100],
+            color: Colors.grey[100],
             fontSize: 15.0,
           ),
         ),

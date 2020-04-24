@@ -23,7 +23,6 @@ class _SigninState extends State<Signin> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 0.0),
       child: new TextFormField(
-
         controller: emailcontroller,
         style: TextStyle(
           color: Colors.grey[100],
@@ -35,7 +34,7 @@ class _SigninState extends State<Signin> {
         enabled: _isloading == false,
         decoration: new InputDecoration(
             hintText: 'Email',
-            hintStyle: TextStyle(color : Colors.grey[500]),
+            hintStyle: TextStyle(color: Colors.grey[500]),
             icon: new Icon(
               Icons.mail,
               color: Colors.grey,

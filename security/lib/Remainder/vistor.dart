@@ -1,7 +1,5 @@
 import 'package:chatting/database/database.dart';
 import 'package:chatting/database/model.dart';
-import 'package:chatting/platoformalertdialog.dart';
-import 'package:chatting/signin/authclass.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';
 import 'package:provider/provider.dart';

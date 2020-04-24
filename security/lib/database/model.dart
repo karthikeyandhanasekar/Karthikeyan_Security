@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Senddata {
@@ -8,6 +7,7 @@ class Senddata {
       @required this.Customername,
       @required this.Customernumber,
       @required this.date,
+      @required this.company,
       @required this.doorno,
       @required this.time,
       @required this.reason});
@@ -19,6 +19,7 @@ class Senddata {
   final String date;
   final String reason;
   final String time;
+  final String company;
 
   // while using factory keyboard constructor doesn't always create a new instance of class
 
@@ -33,6 +34,7 @@ class Senddata {
     final String date = data['Date'];
     final String time = data['Time'];
     final String reason = data['Reason'];
+    final String company = data['Company'];
 
     return Senddata(
         blockid: block,
@@ -42,6 +44,7 @@ class Senddata {
         date: date,
         doorno: door,
         time: time,
+        company: company,
         reason: reason);
   }
 
@@ -53,6 +56,7 @@ class Senddata {
       'Door No': doorno,
       'Date': date,
       'Time': time,
+      'Type' : company,
       'Reason': reason,
     };
   }
