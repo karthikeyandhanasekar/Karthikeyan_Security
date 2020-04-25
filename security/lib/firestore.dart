@@ -100,7 +100,7 @@ class _DetailsState extends State<Details> {
       //Navigator.of(context).pop();
 
       final String information =
-          'DoorStep Security System \n\n\n\n\nBlock ID: ${blockcontroller.text.trim()}\nDoor ID: ${doorcontroller.text.trim()}\nVisitor: ${customercontroller.text.trim()}\nVisitor number: ${customernumcontroller.text.trim()}\nDate  : $date\nTime : $time\nCompany:${companycontroller.text.trim()}\nReason : $purpose';
+          'DoorStep Security System \n\n\n\n\nBlock ID: ${blockcontroller.text.trim()}\nDoor ID: ${doorcontroller.text.trim()}\nVisitor: ${customercontroller.text.trim()}\nVisitor number: ${customernumcontroller.text.trim()}\nDate  : $date\nTime : $time\nCompany:${companycontroller.text.trim()}\nType : ${companycontroller.text.trim()}\nReason : $purpose';
       FlutterOpenWhatsapp.sendSingleMessage(
           "+91${phoneNumcontroller.text.trim()}", information);
       blockcontroller.clear();
@@ -115,7 +115,7 @@ class _DetailsState extends State<Details> {
 
   void share() async {
     final String share1 =
-        'DoorStep Security System \n\n\n\n\n Block ID: ${blockcontroller.text.trim()}\nDoor ID: ${doorcontroller.text.trim()}\nVisitor: ${customercontroller.text.trim()}\nVisitor number: ${customernumcontroller.text.trim()},\n Date  : $date, \nTime : $time\nCompany:${companycontroller.text.trim()}\nReason : ${purposecontroller.text}';
+        'DoorStep Security System \n\n\n\n\n Block ID: ${blockcontroller.text.trim()}\nDoor ID: ${doorcontroller.text.trim()}\nVisitor: ${customercontroller.text.trim()}\nVisitor number: ${customernumcontroller.text.trim()},\n Date  : $date, \nTime : $time\nCompany:${companycontroller.text.trim()}\nType : ${companycontroller.text.trim()}\nReason : ${purposecontroller.text}';
     final RenderBox box = context.findRenderObject();
     Share.share(share1,
         subject: 'DoorStep Security Services',
